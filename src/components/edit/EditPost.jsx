@@ -5,7 +5,7 @@ const EditPost = ({
     posts, handleEdit, editBody, setEditBody, editTitle, setEditTitle
 }) => {
     const { id } = useParams();
-    const post = posts.find(post => (post.id).toString() === id);
+    const post = posts?.find(post => (post?.id)?.toString() === id);
 
     useEffect(() => {
         if (post) {
