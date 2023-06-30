@@ -14,7 +14,32 @@ import './index.css';
 import api from "./components/api/api";
 
 function App() {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      title: "My 1st Post",
+      datetime: "June 28th, 2023 16:44 PM",
+      body: "It is so easy to be great nowadays"
+    },
+    {
+      id: 2,
+      title: "My 2nd Post",
+      datetime: "June 28th, 2023 16:44 PM",
+      body: "The moment you assume somebody is smarter than you, they immediately become stupid"
+    },
+    {
+      id: 3,
+      title: "My 3rd Post",
+      datetime: "June 28th, 2023 16:44 PM",
+      body: "Living with the Communists long enough makes me understand how selfish and stupid they are"
+    },
+    {
+      id: 4,
+      title: "My 4th Post",
+      datetime: "June 28th, 2023 16:44 PM",
+      body: "There are no Logical Reasons to choose the Communists. Yet, Northerners chose them anyway. What a bunch of idiots"
+    }
+  ])
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [postTitle, setPostTitle] = useState('');
@@ -22,6 +47,9 @@ function App() {
   const [editTitle, setEditTitle] = useState('');
   const [editBody, setEditBody] = useState('');
   const navigate = useNavigate();
+
+
+
 
   useEffect(() => {
     const fetchPosts = async () => {
