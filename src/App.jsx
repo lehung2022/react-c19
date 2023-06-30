@@ -124,8 +124,8 @@ function App() {
           <Route path="/post/:id" element={<PostPage posts={posts} handleDelete={handleDelete} />}>
 
           </Route>
-          <Route path="/about" component={About} />
-          <Route path="*" component={Missing} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Missing />} />
         </Routes>
         <Footer />
       </div>
