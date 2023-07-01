@@ -15,18 +15,18 @@ import api from "./components/api/api";
 
 function App() {
   const [posts, setPosts] = useState([
-    // {
-    //   id: 1,
-    //   title: "My 1st Post",
-    //   datetime: "June 28th, 2023 16:44 PM",
-    //   body: "It is so easy to be great nowadays"
-    // },
-    // {
-    //   id: 2,
-    //   title: "My 2nd Post",
-    //   datetime: "June 28th, 2023 16:44 PM",
-    //   body: "The moment you assume somebody is smarter than you, they immediately become stupid"
-    // },
+    {
+      id: 1,
+      title: "My 1st Post",
+      datetime: "June 28th, 2023 16:44 PM",
+      body: "It is so easy to be great nowadays"
+    },
+    {
+      id: 2,
+      title: "My 2nd Post",
+      datetime: "June 28th, 2023 16:44 PM",
+      body: "The moment you assume somebody is smarter than you, they immediately become stupid"
+    },
     // {
     //   id: 3,
     //   title: "My 3rd Post",
@@ -120,18 +120,26 @@ function App() {
       console.log(`Error: ${err.message}`);
     }
   }
-
-  const handleDelete = async (id) => {
-    try {
-      await api.delete(`/posts/${id}`);
-      const postsList = posts?.filter(post => post.id !== id);
-      setPosts(postsList);
-      navigate('/');
-    } catch (err) {
-      console.log(`Error: ${err.message}`);
-    }
+  // handleDelete v1
+  const handleDelete = (id) => {
+    const postsList = posts?.filter(post => post.id !== id);
+    setPosts(postsList);
+    navigate('/');
   }
+  // handleDelete v1
 
+  // handleDelete v2
+  // const handleDelete = async (id) => {
+  //   try {
+  //     await api.delete(`/posts/${id}`);
+  //     const postsList = posts?.filter(post => post.id !== id);
+  //     setPosts(postsList);
+  //     navigate('/');
+  //   } catch (err) {
+  //     console.log(`Error: ${err.message}`);
+  //   }
+  // }
+  // handleDelete v2
 
   return (
     <>
